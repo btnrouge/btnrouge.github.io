@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+body {
+	width: 980px;
+	margin: auto;
+	background-color: white;
+}
+
+header {
+	width: 960px;
+	margin-bottom: 1em;
+}
+
+h1.banner {
+	width: 960px;
+	height: 304px;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	color: transparent;
+	background: url(../images/btnrouge-site-header.png) no-repeat;
+	text-align: center;
+}
+
+span.btnrouge {
+	font-weight: bold;
+}
