@@ -3,9 +3,19 @@
 body {
 	width: 980px;
 	margin: auto;
+	color: #1a1111;
 	background-color: white;
 }
 
+a:link, a:visited {
+	color: #e7398e;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #e7398e;
+	text-decoration: underline;
+}
 header {
 	width: 960px;
 	margin-bottom: 1em;
@@ -24,4 +34,50 @@ h1.banner {
 
 span.btnrouge {
 	font-weight: bold;
+}
+
+header.page {
+	width: 100%;
+	
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+header.page h1 {
+	width: 640px;
+	height: 200px;
+	
+	margin: 0;
+	border: 0;
+	padding: 0;
+	
+	color: transparent;
+	background: url("../images/btnrouge-web-header.png") no-repeat;
+	text-align: left;	
+}
+
+header.page nav {
+	padding: 0.5em 0;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+
+footer.page {
+	font-size: small;
+	margin-left: 2em;
+}
+
+table.tetris99-match {
+	border: 1px solid;
+	border-collapse: collapse;
+}
+
+table.tetris99-match th, td {
+	padding: 0.5em 1em;
+	border: 1px solid;
+}
+
+table.tetris99-match th {
+	background-color: #ec9f9b
 }
