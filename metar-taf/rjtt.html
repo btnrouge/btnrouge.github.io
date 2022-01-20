@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link type="text/css" href="../styles/btnrouge-base.css" rel="stylesheet">
+	<title>飛行場実況気象 (METAR/TAF) : 東京国際空港 (RJTT)</title>
+</head>
+
+<body>
+	<header class="page">
+		<h1>btnrouge</h1>
+		<nav>
+			<a href="../index.html">Home</a> &gt; <a href="./index.html">飛行場実況気象 (METAR/TAF)</a> &gt; 東京国際空港 (RJTT)
+		</nav>
+	</header>
+	
+	<h2>飛行場実況気象 (METAR/TAF) : 東京国際空港 (RJTT/TAF)</h2>
+	
+	<iframe width="780" height="520" title="RJTT METAR" src="https://www.time-j.net/MetarApp/MetarTaf/RJTT"></iframe>
+	
+	<h3>気温と露点温度から相対湿度を求める簡易ツール</h3>
+	<p>METAR 等から取得した気温および露点温度から相対湿度を求めます。</p>
+	<form name="temp">
+		<ul>
+			<li>気温 <input type="text" name="temperature" value="" size="3" autofocus> ℃</li>
+			<li>露点温度 <input type="text" name="dew_point" value="" size="3"> ℃</li>
+		</ul>
+		<p><input type="button" name="calculate" value="相対湿度を計算する" onClick="calculateRelativeHumidity()"></p>
+		<p><span id="relative_humidity">&nbsp;</span></p>
+	</form>
+	<script>
+		function calculateRelativeHumidity() {
+			var t = parseInt(document.forms["temp"].temperature.value);
+			var dp = parseInt(document.forms["temp"].dew_point.value);
+			
+			var rh = 100 * (Math.exp((17.625 * dp) / (243.04 + dp)) / Math.exp((17.625 * t) / (243.04 + t)))
+			
+			document.getElementById("relative_humidity").innerHTML = "相対湿度: " + Math.round(rh) + " %";
+		}
+	</script>
+</body>
+</html>
